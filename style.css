@@ -139,23 +139,21 @@ a {
 }
 
 .hero {
-  padding: 4.7rem 0 3.3rem;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(6, 11, 26, 0.95) 0%, rgba(6, 11, 26, 0.75) 100%), url("images/hero_bg.png") center/cover no-repeat;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(5, 10, 30, 0.75),
+    rgba(5, 10, 30, 0.85)
+  ),
+  url("images/hero image.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  right: -140px;
-  top: 22px;
-  width: 520px;
-  height: 520px;
-  background: url("images/logo with transparent background.png") center / contain no-repeat;
-  opacity: 0.08;
-  pointer-events: none;
-  filter: saturate(0.8);
+.hero-content {
+  max-width: 600px;
+  padding: 40px;
 }
 
 .hero-grid {
@@ -555,5 +553,26 @@ iframe {
     right: -80px;
     top: 130px;
     opacity: 0.1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    padding: 0;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 14px;
   }
 }
